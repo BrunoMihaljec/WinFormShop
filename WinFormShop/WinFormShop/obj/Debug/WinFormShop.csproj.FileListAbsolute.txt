@@ -1,0 +1,10 @@
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\bin\Debug\WinFormShop.exe.config
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\bin\Debug\WinFormShop.exe
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\bin\Debug\WinFormShop.pdb
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.csprojAssemblyReference.cache
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.Form1.resources
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.Properties.Resources.resources
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.csproj.GenerateResource.cache
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.csproj.CoreCompileInputs.cache
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.exe
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.pdb
