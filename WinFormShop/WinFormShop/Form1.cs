@@ -12,21 +12,27 @@ namespace WinFormShop
 {
     public partial class Form1 : Form
     {
-            
-        List<PcComponent> ComponentList = new List<PcComponent>();
-        List<PcComponent> Cart = new List<PcComponent>();
-        private DataTable dtCart = new DataTable();
-        
+
+        public List<PcComponent> ComponentList = new List<PcComponent>();
+        public List<PcComponent> Cart = new List<PcComponent>();
+       
+        public static  Form2 gotocart = new Form2();
+
 
         public Form1()
         {
+            
             InitializeComponent();
             AddProducts();
-            dtCart.Columns.Add("type");
-            dtCart.Columns.Add("name");
-            dtCart.Columns.Add("manufacturer");
-            dtCart.Columns.Add("price", typeof(double));            
-
+            /*List<string> ddlSortlist = new List<string> konto sam preko ovog da odaberem nesto iz ddlSortList i da mi po tome sortira listbox
+            {
+                "CPU",
+                "Memory",
+                "Motherboard",
+                "Storage",
+                "Video Card"
+            };            
+            sortddl.DataSource = ddlSortlist;*/
             ShoppingList.DataSource = ComponentList;         
 
         }
@@ -51,7 +57,7 @@ namespace WinFormShop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         
@@ -62,15 +68,32 @@ namespace WinFormShop
         }
 
         private void Buybtn_Click(object sender, EventArgs e) 
-        {                      
-             CartList.Items.Add(ShoppingList.Text);
-            Activator.CreateInstance(Cart);
+        {
+            gotocart.CartList.Items.Add(ShoppingList.Text);
+            Cart.Add((PcComponent)ShoppingList.SelectedValue);          
             TotalPrice.Text = Cart.Sum(x => x.Price).ToString("C");
+            // Ne update mi cijenu kad se vratim u shop ali ostane mi u cartu proizvodi
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        private void GoToCart_Click(object sender, EventArgs e)
         {
-            CartList.Items.Remove(CartList.Text);
+            Hide();
+            gotocart.Show();            
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

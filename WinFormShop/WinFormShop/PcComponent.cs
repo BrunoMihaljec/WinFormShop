@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormShop
 {
-    class PcComponent
+    public class PcComponent
     {
         
         private string type;
@@ -51,5 +51,6 @@ namespace WinFormShop
         {
             return $"{name} - {type} - {manufacturer} - {price.ToString("C")}";
         }
+        
     }
 }

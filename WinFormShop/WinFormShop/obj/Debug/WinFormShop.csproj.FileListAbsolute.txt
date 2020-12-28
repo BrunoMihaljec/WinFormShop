@@ -8,3 +8,4 @@ C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.csproj
 C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.csproj.CoreCompileInputs.cache
 C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.exe
 C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.pdb
+C:\Users\mihal\source\repos\WinFormShop\WinFormShop\obj\Debug\WinFormShop.Form2.resources
