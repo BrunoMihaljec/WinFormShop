@@ -13,8 +13,7 @@ namespace WinFormShop
         private string name;
         private string manufacturer;
         private double price;
-
-
+        
 
         public PcComponent(string type, string name, string manufacturer, double price)
         {
@@ -22,7 +21,7 @@ namespace WinFormShop
             this.name = name;
             this.manufacturer = manufacturer;
             this.price = price;
-        }
+        }       
 
         public string Type
         {
@@ -52,5 +51,6 @@ namespace WinFormShop
             return $"{name} - {type} - {manufacturer} - {price.ToString("C")}";
         }
         
+
     }
 }

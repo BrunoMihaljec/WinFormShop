@@ -11,11 +11,15 @@ using System.Windows.Forms;
 namespace WinFormShop
 {
     public partial class Form1 : Form
-    {
-
+    {        
         public List<PcComponent> ComponentList = new List<PcComponent>();
-        public List<PcComponent> Cart = new List<PcComponent>();
-       
+
+        public static List<PcComponent> Cart = new List<PcComponent>();
+
+        public List<PcComponent> SortedList = new List<PcComponent>();
+
+        public List<PcComponent> SortedListbyText = new List<PcComponent>();
+
         public static  Form2 gotocart = new Form2();
 
 
@@ -24,17 +28,8 @@ namespace WinFormShop
             
             InitializeComponent();
             AddProducts();
-            /*List<string> ddlSortlist = new List<string> konto sam preko ovog da odaberem nesto iz ddlSortList i da mi po tome sortira listbox
-            {
-                "CPU",
-                "Memory",
-                "Motherboard",
-                "Storage",
-                "Video Card"
-            };            
-            sortddl.DataSource = ddlSortlist;*/
-            ShoppingList.DataSource = ComponentList;         
-
+            
+            
         }
         public void AddProducts()
         {
@@ -57,7 +52,7 @@ namespace WinFormShop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            ShoppingList.DataSource = ComponentList;
         }
 
         
@@ -69,10 +64,14 @@ namespace WinFormShop
 
         private void Buybtn_Click(object sender, EventArgs e) 
         {
-            gotocart.CartList.Items.Add(ShoppingList.Text);
-            Cart.Add((PcComponent)ShoppingList.SelectedValue);          
+            
+            gotocart.CartList.Items.Add(ShoppingList.SelectedItem);
+            Cart.Add((PcComponent)ShoppingList.SelectedItem);          
             TotalPrice.Text = Cart.Sum(x => x.Price).ToString("C");
-            // Ne update mi cijenu kad se vratim u shop ali ostane mi u cartu proizvodi
+            gotocart.lblCartPrice.Text = Cart.Sum(x => x.Price).ToString("C");
+            
+
+
         }
 
         private void GoToCart_Click(object sender, EventArgs e)
@@ -88,12 +87,29 @@ namespace WinFormShop
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ShoppingList.DataSource = null;
+            ShoppingList.Items.Clear();
 
+            SortedList = ComponentList.Where(x => x.Type == sortddl.SelectedItem.ToString()).ToList();
+            ShoppingList.DataSource = SortedList;
         }
 
         private void btnSort_Click(object sender, EventArgs e)
         {
-           
+            
+            ShoppingList.DataSource = null;
+            ShoppingList.Items.Clear();
+          
+            SortedListbyText = SortedList.Where(x => (x.Name.Contains(textBox1.Text))
+              || (x.Type.Contains(textBox1.Text))
+              || (x.Manufacturer.Contains(textBox1.Text))).ToList();
+
+            ShoppingList.DataSource = SortedListbyText;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
