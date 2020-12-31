@@ -41,6 +41,7 @@ namespace WinFormShop
             this.btnExit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ShoppingList
@@ -96,6 +97,7 @@ namespace WinFormShop
             // 
             this.sortddl.FormattingEnabled = true;
             this.sortddl.Items.AddRange(new object[] {
+            "All",
             "CPU",
             "Memory",
             "Motherboard",
@@ -105,13 +107,14 @@ namespace WinFormShop
             this.sortddl.Name = "sortddl";
             this.sortddl.Size = new System.Drawing.Size(121, 21);
             this.sortddl.TabIndex = 7;
+            this.sortddl.Text = "All";
             this.sortddl.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnSort
             // 
-            this.btnSort.Location = new System.Drawing.Point(607, 153);
+            this.btnSort.Location = new System.Drawing.Point(583, 131);
             this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(118, 53);
+            this.btnSort.Size = new System.Drawing.Size(121, 53);
             this.btnSort.TabIndex = 8;
             this.btnSort.Text = "Sort";
             this.btnSort.UseVisualStyleBackColor = true;
@@ -123,9 +126,9 @@ namespace WinFormShop
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(425, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 17);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 9;
-            this.label1.Text = "First Select Type  ";
+            this.label1.Text = "Type:";
             // 
             // label2
             // 
@@ -149,7 +152,7 @@ namespace WinFormShop
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(428, 173);
+            this.textBox1.Location = new System.Drawing.Point(428, 148);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 12;
@@ -159,17 +162,27 @@ namespace WinFormShop
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(425, 153);
+            this.label3.Location = new System.Drawing.Point(425, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 17);
+            this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Then Sort By Letters";
+            this.label3.Text = "Filter:";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(47, 17);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(8, 8);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnExit);
@@ -204,6 +217,7 @@ namespace WinFormShop
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

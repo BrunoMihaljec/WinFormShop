@@ -90,26 +90,37 @@ namespace WinFormShop
             ShoppingList.DataSource = null;
             ShoppingList.Items.Clear();
 
-            SortedList = ComponentList.Where(x => x.Type == sortddl.SelectedItem.ToString()).ToList();
+            if(sortddl.SelectedItem.ToString() == "All")
+            {
+                ShoppingList.DataSource = ComponentList;
+                SortedList = ComponentList;
+            }
+            else
+            {
+                SortedList = ComponentList.Where(x => (x.Type == sortddl.SelectedItem.ToString())).ToList();
             ShoppingList.DataSource = SortedList;
+            }
+            
         }
 
         private void btnSort_Click(object sender, EventArgs e)
         {
-            
+
             ShoppingList.DataSource = null;
             ShoppingList.Items.Clear();
-          
+
+
             SortedListbyText = SortedList.Where(x => (x.Name.Contains(textBox1.Text))
               || (x.Type.Contains(textBox1.Text))
               || (x.Manufacturer.Contains(textBox1.Text))).ToList();
 
             ShoppingList.DataSource = SortedListbyText;
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-        }
+            
+        }      
     }
 }
