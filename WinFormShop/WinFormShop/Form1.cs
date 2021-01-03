@@ -110,9 +110,9 @@ namespace WinFormShop
             ShoppingList.Items.Clear();
 
 
-            SortedListbyText = SortedList.Where(x => (x.Name.Contains(textBox1.Text))
-              || (x.Type.Contains(textBox1.Text))
-              || (x.Manufacturer.Contains(textBox1.Text))).ToList();
+            SortedListbyText = SortedList.Where(x => (x.Name.ToLower().Contains(textBox1.Text.ToLower()))
+              || (x.Type.ToLower().Contains(textBox1.Text.ToLower()))
+              || (x.Manufacturer.ToLower().Contains(textBox1.Text.ToLower()))).ToList();
 
             ShoppingList.DataSource = SortedListbyText;
 
